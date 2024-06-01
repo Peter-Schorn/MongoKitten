@@ -228,4 +228,7 @@ public struct ChangeStreamNotification<T: Decodable>: Decodable {
 
     /// The full document that was changed
     public let fullDocument: T?
+
+    public let fullDocumentBeforeChange: T?
+
 }
