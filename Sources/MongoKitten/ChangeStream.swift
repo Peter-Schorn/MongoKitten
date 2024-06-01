@@ -7,6 +7,7 @@ public struct ChangeStreamOptions: Encodable {
         case batchSize
         case collation
         case fullDocument
+        case fullDocumentBeforeChange
     }
     
     public enum FullDocument: String, Encodable {
@@ -19,6 +20,7 @@ public struct ChangeStreamOptions: Encodable {
     public var collation: Collation?
     
     public var fullDocument: FullDocument?
+    public var fullDocumentBeforeChange: FullDocument?
     
     /// The amount of time that each `getMore` request should wait for more data before replying
     ///
