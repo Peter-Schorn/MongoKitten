@@ -1,5 +1,6 @@
 import MongoClient
 import NIO
+import BSON
 
 /// The options for a change stream
 public struct ChangeStreamOptions: Encodable {
@@ -230,5 +231,12 @@ public struct ChangeStreamNotification<T: Decodable>: Decodable {
     public let fullDocument: T?
 
     public let fullDocumentBeforeChange: T?
+
+    /// The cluster time of this change
+    public let clusterTime: BSON.Timestamp?
+
+    /// The identifier for the session associated with the transaction.
+    /// Only present if the operation is part of a multi-document transaction.
+    public let lsid: Document?
 
 }
