@@ -239,4 +239,6 @@ public struct ChangeStreamNotification<T: Decodable>: Decodable {
     /// Only present if the operation is part of a multi-document transaction.
     public let lsid: Document?
 
+    public let txnNumber: Int64?
+
 }
